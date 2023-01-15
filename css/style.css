@@ -43,6 +43,7 @@ a {
 }
 /* header start */
 header {
+  background-color: white;
   box-shadow: 0 0 10px #ddd;
 }
 header .container {
@@ -117,9 +118,11 @@ header .nav a:hover {
   width: 100%;
   height: 100%;
   left: 0;
-  top: 0;
+  top: -40px;
   z-index: -1;
   background-color: #ececec;
+  transform: skewY(-6deg);
+  transform-origin: top left;
 }
 .landing .container {
   position: relative;
@@ -128,9 +131,54 @@ header .nav a:hover {
   min-height: calc(100vh - 72px);
   padding-bottom: 120px;
 }
+.landing .text {
+  flex: 1;
+}
+.landing .text h1 {
+  font-size: 40px;
+  margin: 0 0 5px;
+  letter-spacing: -2px;
+}
+.landing .text p {
+  line-height: 1.7;
+  font-size: 23px;
+  color: #666;
+  max-width: 500px;
+}
+@media (max-width: 991px) {
+  .landing .text {
+    text-align: center;
+  }
+  .landing .text p {
+    margin: 10px auto;
+  }
+}
+@media (max-width: 767px) {
+  .landing .text h1 {
+    font-size: 28px;
+  }
+  .landing .text p {
+    font-size: 18px;
+  }
+}
+
 .landing .image img {
+  width: 590px;
   max-width: 100%;
+}
+@media (max-width: 991px) {
+  .landing .image {
+    display: none;
+  }
 }
 .landing .arrow {
   position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translate(-50%);
+  color: var(--main-color);
+  transition: var(--main-transition);
+}
+.landing .arrow:hover {
+  color: var(--main-color-alt);
 }
