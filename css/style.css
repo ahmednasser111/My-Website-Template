@@ -9,6 +9,7 @@
   --main-color: #2196f3;
   --main-color-alt: #1787e0;
   --main-transition: 0.3s;
+  --main-padding: 100px;
 }
 html {
   scroll-behavior: smooth;
@@ -40,6 +41,46 @@ a {
   .container {
     width: 1170px;
   }
+}
+.main-header {
+  width: fit-content;
+  padding: 10px 20px;
+  margin: 0 auto 80px;
+  border: 2px solid black;
+  font-size: 30px;
+  position: relative;
+  transition: var(--main-transition);
+  z-index: 1;
+}
+.main-header:hover {
+  color: white;
+  border-color: white;
+  transition-delay: 0.5s;
+}
+.main-header::before,
+.main-header::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--main-color);
+}
+.main-header::before {
+  left: -30px;
+}
+.main-header::after {
+  right: -30px;
+}
+.main-header:hover::after {
+  z-index: -1;
+  animation: right-move 0.5s linear forwards;
+}
+.main-header:hover::before {
+  z-index: -1;
+  animation: left-move 0.5s linear forwards;
 }
 /* header start */
 header {
@@ -186,6 +227,10 @@ header .nav a:hover {
 .landing .arrow i {
   animation: bounce 1.5s infinite;
 }
+/* Start Articles */
+.articles {
+  padding: var(--main-padding) 0;
+}
 /* Start Animation */
 @keyframes up-down {
   0%,
@@ -208,5 +253,31 @@ header .nav a:hover {
   40%,
   60% {
     transform: translateY(-15px);
+  }
+}
+@keyframes right-move {
+  50% {
+    right: 0;
+    width: 12px;
+    height: 12px;
+  }
+  100% {
+    right: 0;
+    border-radius: 0;
+    width: 50%;
+    height: 100%;
+  }
+}
+@keyframes left-move {
+  50% {
+    left: 0;
+    width: 12px;
+    height: 12px;
+  }
+  100% {
+    left: 0;
+    border-radius: 0;
+    width: 50%;
+    height: 100%;
   }
 }
