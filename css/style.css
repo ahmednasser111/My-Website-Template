@@ -55,7 +55,7 @@ a {
 }
 .main-header:hover {
   color: white;
-  border-color: white;
+  border: 2px solid white;
   transition-delay: 0.5s;
 }
 .main-header::before,
@@ -273,7 +273,171 @@ header .nav a:hover {
 }
 /* Start Gallery */
 .gallery {
-  background-color: var(--background-color);
+  padding: var(--main-padding) 0;
+  background-color: var(--section-background);
+}
+.gallery .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+.gallery .box {
+  padding: 15px;
+  background-color: white;
+}
+.gallery .box .image {
+  overflow: hidden;
+  position: relative;
+}
+.gallery .box .image::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(255 255 255 / 20%);
+  z-index: 2;
+}
+.gallery .box:hover .image::before {
+  animation: flash 0.3s;
+}
+.gallery .box img {
+  max-width: 100%;
+  transition: var(--main-transition);
+}
+.gallery .box:hover img {
+  transform: rotate(5deg) scale(1.1);
+}
+/* Start Features */
+.features {
+  padding: var(--main-padding) 0;
+}
+.features .container {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+.features .box {
+  text-align: center;
+  border: 1px solid #ccc;
+}
+.features .box .image {
+  position: relative;
+}
+.features .box .image::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.features .quality .image::before {
+  background-color: rgb(244 64 54 / 60%);
+}
+.features .time .image::before {
+  background-color: rgb(0 150 136 / 60%);
+}
+.features .passion .image::before {
+  background-color: rgb(3 169 244/ 60%);
+}
+.features .box .image::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-style: solid;
+  border-color: transparent transparent white;
+  border-width: 0 0 170px 500px;
+  transition: var(--main-transition);
+}
+.features .box:hover .image::after {
+  border-width: 170px 500px 170px 0;
+}
+.features .box .image img {
+  max-width: 100%;
+  width: 100%;
+}
+
+.features .box h2 {
+  font-size: 40px;
+  width: fit-content;
+  margin: 0 auto;
+  position: relative;
+}
+.features .box h2::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 15px;
+  width: calc(100% - 30px);
+  height: 5px;
+}
+.features .quality h2::after {
+  background-color: #f44036;
+}
+.features .time h2::after {
+  background-color: #009688;
+}
+.features .passion h2::after {
+  background-color: #03a9f4;
+}
+.features .box p {
+  line-height: 2;
+  margin: 30px 0;
+}
+.features .box a {
+  transition: var(--main-transition);
+  padding: 10px 30px;
+  display: block;
+  width: fit-content;
+  margin: 0 auto 30px;
+  font-size: 22px;
+  font-weight: bold;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 6px;
+  position: relative;
+}
+.features .box:hover a {
+  color: white;
+}
+.features .quality a {
+  color: #f44036;
+  border-color: #f44036;
+}
+.features .time a {
+  color: #009688;
+  border-color: #009688;
+}
+.features .passion a {
+  color: #03a9f4;
+  border-color: #03a9f4;
+}
+.features .box a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: var(--main-transition);
+  z-index: -1;
+}
+
+.features .quality a::before {
+  background-color: #f44036;
+}
+.features .time a::before {
+  background-color: #009688;
+}
+.features .passion a::before {
+  background-color: #03a9f4;
+}
+.features .box:hover a::before {
+  width: 100%;
 }
 /* Start Animation */
 @keyframes up-down {
@@ -299,19 +463,6 @@ header .nav a:hover {
     transform: translateY(-15px);
   }
 }
-@keyframes right-move {
-  50% {
-    right: 0;
-    width: 12px;
-    height: 12px;
-  }
-  100% {
-    right: 0;
-    border-radius: 0;
-    width: 50%;
-    height: 100%;
-  }
-}
 @keyframes left-move {
   50% {
     left: 0;
@@ -325,8 +476,27 @@ header .nav a:hover {
     height: 100%;
   }
 }
+@keyframes right-move {
+  50% {
+    right: 0;
+    width: 12px;
+    height: 12px;
+  }
+  100% {
+    right: 0;
+    border-radius: 0;
+    width: 50%;
+    height: 100%;
+  }
+}
 @keyframes moving-arrow {
   100% {
     transform: translate(10px);
+  }
+}
+@keyframes flash {
+  100% {
+    width: 100%;
+    height: 100%;
   }
 }
