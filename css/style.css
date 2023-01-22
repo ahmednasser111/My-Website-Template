@@ -44,7 +44,7 @@ a {
   }
 }
 .main-header {
-  width: fit-content;
+  display: table;
   padding: 10px 20px;
   margin: 0 auto 80px;
   border: 2px solid black;
@@ -360,10 +360,9 @@ header .nav a:hover {
   max-width: 100%;
   width: 100%;
 }
-
 .features .box h2 {
   font-size: 40px;
-  width: fit-content;
+  display: table;
   margin: 0 auto;
   position: relative;
 }
@@ -391,8 +390,7 @@ header .nav a:hover {
 .features .box a {
   transition: var(--main-transition);
   padding: 10px 30px;
-  display: block;
-  width: fit-content;
+  display: table;
   margin: 0 auto 30px;
   font-size: 22px;
   font-weight: bold;
