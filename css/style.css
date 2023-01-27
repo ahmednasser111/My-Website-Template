@@ -514,6 +514,41 @@ header .nav > li .mega-menu .links li a i {
 .features .box:hover a::before {
   width: 100%;
 }
+.testimonials {
+  padding: var(--main-padding) 0;
+  background-color: var(--section-background);
+}
+.testimonials .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+.testimonials .box {
+  padding: 20px;
+  background-color: white;
+  position: relative;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 7%);
+  border-radius: 6px;
+}
+.testimonials img {
+  position: absolute;
+  right: -10px;
+  top: -50px;
+  width: 100px;
+  border-radius: 50%;
+  border: 10px solid var(--section-background);
+}
+.testimonials .title {
+  display: block;
+  margin: 10px 0;
+}
+.testimonials .rate {
+  display: flex;
+  margin-bottom: 10px;
+}
+.testimonials .rate .filled {
+  color: #ffc107;
+}
 /* Start Animation */
 @keyframes up-down {
   0%,
