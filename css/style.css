@@ -549,6 +549,84 @@ header .nav > li .mega-menu .links li a i {
 .testimonials .rate .filled {
   color: #ffc107;
 }
+.team {
+  padding: var(--main-padding) 0;
+}
+.team .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+.team .box {
+  position: relative;
+}
+.team .box::before,
+.team .box::after {
+  content: "";
+  background-color: #f3f3f3;
+  position: absolute;
+  width: calc(100% - 60px);
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -2;
+  transition: var(--main-transition);
+}
+.team .box::after {
+  background-color: #e4e4e4;
+  width: 0;
+  z-index: -1;
+}
+.team .box:hover::after {
+  width: calc(100% - 60px);
+}
+.team .image {
+  display: flex;
+  align-items: center;
+  padding-top: 60px;
+}
+.team .image img {
+  width: calc(100% - 60px);
+  border-radius: 10px;
+  transition: var(--main-transition);
+}
+.team .box:hover .image img {
+  filter: grayscale(100%);
+}
+.team .image .links {
+  width: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  color: #777;
+}
+.team .image .links li {
+  width: 60px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--main-transition);
+  cursor: pointer;
+}
+.team .image .links li:hover {
+  color: var(--main-color);
+}
+.team .info {
+  padding-left: 80px;
+}
+.team .info h3 {
+  color: var(--main-color);
+  margin-top: 22px;
+  transition: var(--main-transition);
+}
+.team .box:hover .info h3 {
+  color: #777;
+}
+.team .info p {
+  margin: 10px 0 25px;
+}
 /* Start Animation */
 @keyframes up-down {
   0%,
