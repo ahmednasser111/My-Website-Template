@@ -51,6 +51,7 @@ a {
   font-size: 30px;
   position: relative;
   transition: var(--main-transition);
+  z-index: 1;
 }
 .main-header:hover {
   color: white;
@@ -985,6 +986,11 @@ header .mega-menu .links li a i {
 .pricing .plan:hover::before,
 .pricing .plan:hover::after {
   width: 100%;
+}
+@media (min-width: 1200px) {
+  .pricing .plan:nth-child(2) {
+    transform: translateY(-20px);
+  }
 }
 .pricing .plan .popular {
   position: absolute;
