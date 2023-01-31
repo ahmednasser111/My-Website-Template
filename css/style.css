@@ -1058,6 +1058,49 @@ header .mega-menu .links li a i {
   border-color: var(--main-color-alt);
   color: white;
 }
+/* Start top-videos */
+.top-videos {
+  padding: var(--main-padding) 0;
+}
+.top-videos .holder {
+  display: flex;
+  background-color: var(--section-background);
+  border: 1px solid #ddd;
+}
+.top-videos .playlist .title {
+  padding: 20px;
+  background-color: #f4f4f4;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+.top-videos .playlist ul {
+  min-width: 300px;
+}
+.top-videos .playlist ul li {
+  padding: 20px;
+  border-top: 1px solid var(--section-background);
+  background-color: white;
+}
+.top-videos .playlist ul li .duration {
+  display: block;
+  margin-top: 10px;
+  color: #777;
+}
+.top-videos .player {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #e2e2e2;
+}
+.top-videos .player img {
+  max-width: 100%;
+}
+.top-videos .player .info {
+  background-color: white;
+  padding: 20px;
+}
 /* Start Animation */
 @keyframes up-down {
   0%,
