@@ -398,7 +398,7 @@ header .mega-menu .links li a i {
   z-index: 2;
 }
 .gallery .box:hover .image::before {
-  animation: flash 0.3s;
+  animation: flash 0.35s;
 }
 .gallery .box img {
   max-width: 100%;
@@ -419,6 +419,7 @@ header .mega-menu .links li a i {
 .features .box {
   text-align: center;
   border: 1px solid #ccc;
+  overflow: hidden;
 }
 .features .box .image {
   position: relative;
