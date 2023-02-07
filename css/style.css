@@ -104,6 +104,20 @@ input {
   bottom: 200px;
   left: 0;
 }
+.spikes {
+  position: relative;
+}
+.spikes::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  right: 0;
+  z-index: 1;
+  background-image: linear-gradient(135deg, white 25%, transparent 25%),
+    linear-gradient(225deg, white 25%, transparent 25%);
+  background-size: 30px 30px;
+}
 /* header start */
 header {
   background-color: white;
@@ -444,7 +458,7 @@ header .mega-menu .links li a i {
 .features .box .image::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   right: 0;
   border-style: solid;
   border-color: transparent transparent white;
