@@ -799,7 +799,7 @@ header .mega-menu .links li a i {
     gap: 50px;
   }
 }
-.how-it-works img {
+.how-it-works .container > img {
   max-width: 100%;
 }
 .how-it-works .info .box {
@@ -853,23 +853,23 @@ header .mega-menu .links li a i {
   padding: var(--main-padding) 0;
   position: relative;
 }
-.latest-events .time-container {
+.latest-events .container {
   display: flex;
   align-items: center;
 }
-.latest-events .time-container img {
+.latest-events .container img {
   max-width: 450px;
 }
 @media (max-width: 991px) {
-  .latest-events .time-container img {
+  .latest-events .container img {
     display: none;
   }
 }
-.latest-events .time-container .text {
+.latest-events .container .text {
   flex: 1;
   text-align: center;
 }
-.latest-events .time-container .text .time {
+.latest-events .container .text .time {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -882,9 +882,6 @@ header .mega-menu .links li a i {
   border-radius: 6px;
   transition: var(--main-transition);
 }
-.latest-events .text .time .unit:hover {
-  border-color: var(--main-color);
-}
 .latest-events .text .time .unit .numbers {
   font-weight: bold;
   color: var(--main-color);
@@ -893,6 +890,7 @@ header .mega-menu .links li a i {
   border-bottom: 1px solid #d4d4d4;
   transition: var(--main-transition);
 }
+.latest-events .text .time .unit:hover,
 .latest-events .text .time .unit:hover .numbers {
   border-color: var(--main-color);
 }
@@ -918,6 +916,7 @@ header .mega-menu .links li a i {
   background-color: #f6f5f5;
   width: 600px;
   margin: 70px auto 0;
+  max-width: 100%;
 }
 .latest-events form input:focus::placeholder {
   color: transparent;
@@ -927,7 +926,6 @@ header .mega-menu .links li a i {
   .latest-events form {
     border-radius: 0;
     flex-direction: column;
-    max-width: 100%;
     padding: 20px;
   }
 }
