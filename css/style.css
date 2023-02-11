@@ -988,7 +988,6 @@ header .mega-menu .links li a i {
   transition: var(--main-transition);
 }
 .pricing .plan::before {
-  top: 0;
   left: 0;
 }
 .pricing .plan::after {
@@ -1007,7 +1006,6 @@ header .mega-menu .links li a i {
 .pricing .plan .popular {
   position: absolute;
   top: 0;
-  right: 0;
   writing-mode: vertical-rl;
   background-color: var(--main-color);
   color: white;
