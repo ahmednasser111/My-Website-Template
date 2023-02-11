@@ -84,23 +84,31 @@ a {
   animation: left-move 0.5s linear forwards;
 }
 
-input:focus {
+input:focus,
+textarea:focus {
   outline: none;
 }
-input {
+input,
+textarea {
   border: none;
 }
 .dots {
+  background-image: url("..\\images\\dots.png");
+  background-repeat: no-repeat;
   position: absolute;
   height: 186px;
   width: 204px;
-  z-index: 1;
 }
-.up {
+@media (max-width: 991px) {
+  .dots {
+    display: none;
+  }
+}
+.dots-up {
   top: 200px;
   right: 0;
 }
-.down {
+.dots-down {
   bottom: 200px;
   left: 0;
 }
@@ -1089,13 +1097,19 @@ header .mega-menu .links li a i {
   display: flex;
   justify-content: space-between;
 }
-.top-videos .playlist ul {
+.top-videos .playlist {
   min-width: 300px;
 }
 .top-videos .playlist ul li {
   padding: 20px;
   border-top: 1px solid var(--section-background);
   background-color: white;
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+.top-videos .playlist ul li:hover {
+  background-color: #fafafa;
+  color: var(--main-color);
 }
 .top-videos .playlist ul li .duration {
   display: block;
@@ -1121,7 +1135,6 @@ header .mega-menu .links li a i {
   padding: var(--main-padding) 0;
   background-image: url("..\\images\\stats.jpg");
   background-size: cover;
-  min-height: 300px;
   position: relative;
 }
 .stats::before {
@@ -1152,7 +1165,10 @@ header .mega-menu .links li a i {
   padding: 30px 15px;
   font-weight: bold;
   transition: var(--main-transition);
-  opacity: 0.8;
+  opacity: 0.7;
+}
+.stats .stat:hover {
+  opacity: 1;
 }
 .stats .stat::before,
 .stats .stat::after {
@@ -1182,6 +1198,7 @@ header .mega-menu .links li a i {
 }
 .stats .stat .name {
   font-style: italic;
+  font-weight: bold;
   color: var(--main-color);
   font-size: 20px;
 }
@@ -1228,7 +1245,7 @@ header .mega-menu .links li a i {
   margin: 30px 0;
 }
 .request-a-discount .image p {
-  line-height: 1.6;
+  line-height: 1.7;
   font-size: 18px;
   max-width: 500px;
   margin: 18px 0;
@@ -1248,12 +1265,12 @@ header .mega-menu .links li a i {
   display: block;
   padding: 15px;
   background-color: #f9f9f9;
-  border: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
   margin-bottom: 25px;
   width: 100%;
   caret-color: var(--main-color);
 }
-.request-a-discount form textarea {
+.request-a-discount form textarea.input {
   height: 200px;
   resize: none;
 }
@@ -1310,15 +1327,15 @@ footer .box .social li a {
   justify-content: center;
   transition: var(--main-transition);
 }
-footer .box .social .facebook:hover {
+footer .box .social li:first-child a:hover {
   background-color: #1877f2;
 }
 
-footer .box .social .twitter:hover {
+footer .box .social li:nth-child(2) a:hover {
   background-color: #1da1f2;
 }
 
-footer .box .social .youtube:hover {
+footer .box .social li:last-child a:hover {
   background-color: red;
 }
 footer .box p {
@@ -1364,7 +1381,7 @@ footer .details li i {
 }
 footer .details li span {
   display: block;
-  margin: 10px;
+  margin: 10px 0;
 }
 footer .box img {
   width: 78px;
