@@ -1,6 +1,7 @@
 * {
   padding: 0;
   margin: 0;
+  border: none;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -84,13 +85,8 @@ a {
   animation: left-move 0.5s linear forwards;
 }
 
-input:focus,
-textarea:focus {
+*:focus {
   outline: none;
-}
-input,
-textarea {
-  border: none;
 }
 .dots {
   background-image: url("..\\images\\dots.png");
